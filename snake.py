@@ -53,7 +53,10 @@ class App():
         pyxel.cls(0)
         for draw_x, draw_y in tool.product(range(16), range(16)):
             if (draw_x, draw_y) in self.snake_position[:-1]:
-                pyxel.rect(draw_x*8, draw_y*8, 8, 8, 1)
+                if self.snake_position.index((draw_x, draw_y))%2 == 0
+                    pyxel.rect(draw_x*8, draw_y*8, 8, 8, 1)
+                else:
+                    pyxel.rect(draw_x*8, draw_y*8, 8, 8, 1)
             elif (draw_x, draw_y) == self.snake_position[-1]:
                 pyxel.rect(draw_x*8, draw_y*8, 8, 8, 5)
             elif [draw_x, draw_y] == self.apple_position:
