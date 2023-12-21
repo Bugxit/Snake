@@ -15,7 +15,7 @@ class App():
         pyxel.run(self.update, self.draw)
 
     def update(self):
-        if self.delay == 1:
+        if self.delay == 10:
             self.delay = 0
             self.old_snake_position = self.snake_position
             if self.snake_state == "up":
@@ -58,9 +58,11 @@ class App():
                 pyxel.rect(draw_x*8, draw_y*8, 8, 8, 5)
             elif [draw_x, draw_y] == self.apple_position:
                 pyxel.rect(draw_x*8, draw_y*8, 8, 8, 8)
+            elif (drax_x + draw_y)%2 == 0:
+                pyxel.rect(draw_x*8, draw_y*8, 8, 8, 11)
             else:
                 pyxel.rect(draw_x*8, draw_y*8, 8, 8, 11)
-    
+                
     def free_squares(self):
         list = []
         for list_x, list_y in tool.product(range(16), range(16)):
