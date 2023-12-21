@@ -59,7 +59,7 @@ class App():
             elif [draw_x, draw_y] == self.apple_position:
                 pyxel.rect(draw_x*8, draw_y*8, 8, 8, 8)
             elif (drax_x + draw_y)%2 == 0:
-                pyxel.rect(draw_x*8, draw_y*8, 8, 8, 11)
+                pyxel.rect(draw_x*8, draw_y*8, 8, 8, 3)
             else:
                 pyxel.rect(draw_x*8, draw_y*8, 8, 8, 11)
                 
